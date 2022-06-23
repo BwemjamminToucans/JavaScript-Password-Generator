@@ -1,2 +1,2 @@
-# madule-3-challenge
+# Javascript-Password-Generator
 JavaScript Password Generator Assignment
