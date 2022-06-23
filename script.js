@@ -20,31 +20,68 @@ function writePassword() {
 //prompts the user to enter how many characters the password will be
 userInput = prompt ("How many characters would you like your password to be? (Must be between 8-128 characters)");
   //loop if the number of password characters is outside the parameters
-  while (userImput <= 7 || userImput >= 129) {
+  while (userInput <= 7 || userInput >= 129) {
     alert("Password must be between 8-128 characters. Please try again.");
-    var userImput = prompt ("How many characters would you like your password to be? (Must be between 8-128 characters)");
-    console.log(userImput);
+    var userInput = prompt ("How many characters would you like your password to be? (Must be between 8-128 characters)");
+    console.log(userInput);
   }
 userInputUpper = confirm ("Do you want your password to contain Upper-Case Letters?");
 userInputLower = confirm ("Do you want your password to contain Lower-Case Letters?");
 userInputNum = confirm ("Do you want your password to contain Numbers?");
 userInputSpc = confirm ("Do you want your password to contain Special Characters?");
  //user selects no criteria 
-if (!userInputUpper && !userInputLower && !userInputNum && !userInputSpc) {
+if (!upperCase && !lowerCase && !userInputNum && !userInputSpc) {
     choices = alert ("You must choose at least one (1) criteria");
 }
 //user selects all criteria
-  else if (userInputUpper && userInputLower && userInputNum && userInputSpc) {
-    choices = userInputUpper.concat(userInputLower, userInputNum, userInputSpc);
+  else if (upperCase && lowerCase && number && specChar) {
+    choices = upperCase.concat(lowerCase, number, specChar);
   }
 //user selects 3 criteria
-  else if (us) {
-
+  else if (lowerCase, number, specChar) {
+    choices = lowerCase.concat(number, specChar);
+  }
+  else if (lowerCase, number, upperCase) {
+    choices = lowerCase.concat(number,upperCase);
+  }
+  else if (lowerCase, specChar, upperCase) {
+    choices = lowerCase.concat(specChar,upperCase);
+  }
+  else if (upperCase, number, specChar) {
+    choices = upperCase.concat(number, specChar);
   }
 //user selects 2 criteria
-
+  else if (upperCase, lowerCase) {
+    choices = upperCase.concat(lowerCase);
+  }
+  else if (upperCase, number) {
+    choices = upperCase.concat(number);
+  }
+  else if (upperCase, specChar) {
+    choices = upperCase.concat(specChar);
+  }
+  else if (lowerCase, specChar) {
+    choices = lowerCase.concat(specChar);
+  }
+  else if (lowerCase, number) {
+    choices = lowerCase.concat(number);
+  }
+  else if (number, specChar) {
+    choices = number.concat(specChar);
+  }
 //user selects 1 criteria
-
+  else if (upperCase) {
+    choices = upperCase;
+  }
+  else if (lowerCase) {
+    choices = lowerCase;
+  }
+  else if (number) {
+    choices = number;
+  }
+    else if (specChar) {
+    choices = specChar;
+  }
 //function for randomizing selected criteria
 
 var password = generatePassword();
