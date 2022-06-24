@@ -11,6 +11,8 @@ var userInputLower;
 var userInputNum;
 var userInputSpc;
 var choices;
+var passChoices;
+var generatePassword =(writePassword);
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -26,10 +28,14 @@ userInput = prompt ("How many characters would you like your password to be? (Mu
     console.log(userInput);
   }
 userInputUpper = confirm ("Do you want your password to contain Upper-Case Letters?");
+  console.log(userInputUpper);
 userInputLower = confirm ("Do you want your password to contain Lower-Case Letters?");
+  console.log(userInputLower)
 userInputNum = confirm ("Do you want your password to contain Numbers?");
+  console.log(userInputNum);
 userInputSpc = confirm ("Do you want your password to contain Special Characters?");
- //user selects no criteria 
+  console.log(userInputSpc);
+//user selects no criteria 
 if (!upperCase && !lowerCase && !userInputNum && !userInputSpc) {
     choices = alert ("You must choose at least one (1) criteria");
 }
@@ -82,7 +88,12 @@ if (!upperCase && !lowerCase && !userInputNum && !userInputSpc) {
     else if (specChar) {
     choices = specChar;
   }
+
+  console.log(choices);
 //function for randomizing selected criteria
+var passChoices = choices[Math.floor(Math.random()*choices.length)]
+
+
 
 var password = generatePassword();
   var passwordText = document.querySelector("#password");
