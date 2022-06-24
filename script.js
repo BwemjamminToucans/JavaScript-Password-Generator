@@ -26,6 +26,7 @@ userInput = prompt ("How many characters would you like your password to be? (Mu
     var userInput = prompt ("How many characters would you like your password to be? (Must be between 8-128 characters)");
     console.log(userInput);
   }
+  //confirm prompts for determining password character criteria
 userInputUpper = confirm ("Do you want your password to contain Upper-Case Letters?");
   console.log(userInputUpper);
 userInputLower = confirm ("Do you want your password to contain Lower-Case Letters?");
@@ -96,6 +97,7 @@ for (let i = 0; i < parseInt(userInput); i++) {
 console.log(passChoices);
 return passChoices
 }
+//function for displaying password in HTML text box
 function writePassword(){
 var password =generatePassword()
 var passwordText=document.querySelector("#password")
