@@ -11,14 +11,13 @@ var userInputLower;
 var userInputNum;
 var userInputSpc;
 var choices;
-var passChoices;
-var generatePassword =(writePassword);
+var passChoices = "";
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
+function generatePassword() {
 //prompts the user to enter how many characters the password will be
 userInput = prompt ("How many characters would you like your password to be? (Must be between 8-128 characters)");
   //loop if the number of password characters is outside the parameters
@@ -91,14 +90,16 @@ if (!upperCase && !lowerCase && !userInputNum && !userInputSpc) {
 
   console.log(choices);
 //function for randomizing selected criteria
-var passChoices = choices[Math.floor(Math.random()*choices.length)]
-
-
-
-var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+for (let i = 0; i < parseInt(userInput); i++) {
+  passChoices += choices[Math.floor(Math.random()*choices.length)];
+}
+console.log(passChoices);
+return passChoices
+}
+function writePassword(){
+var password =generatePassword()
+var passwordText=document.querySelector("#password")
+passwordText.value=password
 }
 
 // Add event listener to generate button
