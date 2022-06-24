@@ -12,6 +12,7 @@ var userInputNum;
 var userInputSpc;
 var choices;
 var passChoices = "";
+var again;
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -36,56 +37,57 @@ userInputNum = confirm ("Do you want your password to contain Numbers?");
 userInputSpc = confirm ("Do you want your password to contain Special Characters?");
   console.log(userInputSpc);
 //user selects no criteria 
-if (!upperCase && !lowerCase && !userInputNum && !userInputSpc) {
-    choices = alert ("You must choose at least one (1) criteria");
+while (!userInputUpper && !userInputLower && !userInputNum && !userInputSpc) {
+    alert ("You must choose at least one (1) criteria");
+    var userInputUpper = confirm ("Do you want your password to contain Upper-Case Letters?");
 }
 //user selects all criteria
-  else if (upperCase && lowerCase && number && specChar) {
+  if (userInputUpper && userInputLower && userInputNum && userInputSpc) {
     choices = upperCase.concat(lowerCase, number, specChar);
   }
 //user selects 3 criteria
-  else if (lowerCase, number, specChar) {
+  else if (userInputLower && userInputNum && userInputNum) {
     choices = lowerCase.concat(number, specChar);
   }
-  else if (lowerCase, number, upperCase) {
+  else if (userInputLower && userInputNum && userInputUpper) {
     choices = lowerCase.concat(number,upperCase);
   }
-  else if (lowerCase, specChar, upperCase) {
+  else if (userInputLower && userInputSpc && userInputUpper) {
     choices = lowerCase.concat(specChar,upperCase);
   }
-  else if (upperCase, number, specChar) {
+  else if (userInputUpper && userInputNum && userInputSpc) {
     choices = upperCase.concat(number, specChar);
   }
 //user selects 2 criteria
-  else if (upperCase, lowerCase) {
+  else if (userInputUpper && userInputLower) {
     choices = upperCase.concat(lowerCase);
   }
-  else if (upperCase, number) {
+  else if (userInputUpper && userInputNum) {
     choices = upperCase.concat(number);
   }
-  else if (upperCase, specChar) {
+  else if (userInputUpper && userInputSpc) {
     choices = upperCase.concat(specChar);
   }
-  else if (lowerCase, specChar) {
+  else if (userInputLower && userInputSpc) {
     choices = lowerCase.concat(specChar);
   }
-  else if (lowerCase, number) {
+  else if (userInputLower && userInputNum) {
     choices = lowerCase.concat(number);
   }
-  else if (number, specChar) {
+  else if (userInputNum && userInputSpc) {
     choices = number.concat(specChar);
   }
 //user selects 1 criteria
-  else if (upperCase) {
+  else if (userInputUpper) {
     choices = upperCase;
   }
-  else if (lowerCase) {
+  else if (userInputLower) {
     choices = lowerCase;
   }
-  else if (number) {
+  else if (userInputNum) {
     choices = number;
   }
-    else if (specChar) {
+    else if (userInputSpc) {
     choices = specChar;
   }
 
@@ -103,6 +105,7 @@ var password =generatePassword()
 var passwordText=document.querySelector("#password")
 passwordText.value=password
 }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
