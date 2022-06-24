@@ -5,3 +5,4 @@ Link to deployed application URL: https://bwemjammintoucans.github.io/JavaScript
 
 This Web-Application used JavaScript to rendomly generate a password between 8-128 characters using a mix of upper and lower case letters, numbers, and special characters. User can select any mix of these criteria.
 
+![image](https://github.com/BwemjamminToucans/JavaScript-Password-Generator/blob/main/assets/images/JavaScript%20Password%20Generator.PNG)
